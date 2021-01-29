@@ -1,5 +1,6 @@
 $theme-colors: (
-        "primary": #fd6000
+        "primary": #fd6000,
+        "brown" : #4e443e
 );
 
 $font-family-sans-serif:      Chivo, Lato, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
@@ -17,5 +18,5 @@ $font-family-sans-serif:      Chivo, Lato, system-ui, -apple-system, "Segoe UI",
 
 .active .nav-link{
   text-transform: uppercase;
-  color: #fd6000;
+  color: #fd6000 !important;
 }

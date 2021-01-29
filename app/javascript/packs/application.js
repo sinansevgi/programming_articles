@@ -4,16 +4,20 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
-import "@hotwired/turbo-rails"
+import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
+import "@fortawesome/fontawesome-free/css/all";
+import "../stylesheets/application";
 import "channels"
 
 Rails.start()
+Turbolinks.start()
 ActiveStorage.start()
 
 require("bootstrap")
-import "@fortawesome/fontawesome-free/css/all"
-import "../stylesheets/application";
+require("trix")
+require("@rails/actiontext")
+
 document.addEventListener("turbolinks:load", function() {
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
@@ -26,6 +30,8 @@ document.addEventListener('turbolinks:load', () =>{
         document.querySelector('.offcanvas-collapse').classList.toggle('open')
     })
 })
-require("trix")
-require("@rails/actiontext")
-import "controllers"
+
+window.addEventListener("trix-file-accept", function(event) {
+    event.preventDefault()
+    alert("File attachment not supported!")
+})

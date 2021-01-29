@@ -1,4 +1,10 @@
-@import "fonts";
 @import "custom";
+@import "fonts";
 @import '~bootstrap/scss/bootstrap';
 @import "offcanvas";
+
+.trix-button-group--file-tools { display: none !important; }
+
+.main {
+  min-height: 90vh;
+}

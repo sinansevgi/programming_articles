@@ -11,15 +11,16 @@
 
       <ul class="navbar-nav m-auto mb-2 mb-lg-0 flex-grow-0">
         <li class="nav-item">
-        <%= nav_link("Home", categories_path) %>
+          <%= nav_link("Home", categories_path) %>
         </li>
         <% Category.all_categories.each do |category| %>
-            <%= nav_link(category.name, category_path(category))%>
+          <%= nav_link(category.name, category_path(category)) %>
         <% end %>
       </ul>
       <div>
-      <%= user_buttons %>
-      <i class="fas fa-search"></i>
+        <%= user_buttons %>
+        <i class="fas fa-search"></i>
       </div>
+    </div>
   </div>
 </nav>

@@ -1,14 +1,7 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<% @category.articles.each do |article| %>
+  <%= render "article", article: article %>
+<% end %>
+</div>
 
-<p>
-  <strong>Priority:</strong>
-  <%= @category.priority %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :sessions
 
   resources :categories
-  resources :articles do
+  resources :articles,  only: %i[new create update edit show destroy] do
     resources :votes, only: %i[create destroy]
   end
   root to: 'categories#index'

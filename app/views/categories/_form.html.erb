@@ -1,3 +1,5 @@
+<div class="col-lg-4 offset-lg-4 text-center">
+  <div class="card m-lg-5 m-md-1 p-lg-5 p-md-1 border-primary">
 <%= form_with(model: category) do |form| %>
   <% if category.errors.any? %>
     <div id="error_explanation">
@@ -10,18 +12,22 @@
       </ul>
     </div>
   <% end %>
+      <h1 class="h3 mb-3 font-weight-normal">Create a new category</h1>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:'form-control'  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :priority %>
-    <%= form.number_field :priority %>
+    <%= form.number_field :priority, value: '1',min: '1', max: '9', class:'form-control'  %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Create New Category', class: 'btn btn-lg btn-primary btn-block'%>
   </div>
 <% end %>
+
+  </div>
+</div>
