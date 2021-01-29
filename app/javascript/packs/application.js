@@ -4,10 +4,28 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
+import "@hotwired/turbo-rails"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 Rails.start()
-Turbolinks.start()
 ActiveStorage.start()
+
+require("bootstrap")
+import "@fortawesome/fontawesome-free/css/all"
+import "../stylesheets/application";
+document.addEventListener("turbolinks:load", function() {
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+        $('[data-toggle="popover"]').popover()
+    })
+})
+
+document.addEventListener('turbolinks:load', () =>{
+    document.querySelector('[data-bs-toggle="offcanvas"]').addEventListener('click', function () {
+        document.querySelector('.offcanvas-collapse').classList.toggle('open')
+    })
+})
+require("trix")
+require("@rails/actiontext")
+import "controllers"
