@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[ show edit update destroy ]
+  before_action :set_category, only: %i[show edit update destroy]
+  before_action :authorize, only: %i[create edit update destroy]
 
   def index
     @categories = Category.all
@@ -40,7 +41,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: "Category was successfully destroyed." }
+      format.html { redirect_to root_path, notice: "Category was successfully destroyed." }
     end
   end
 

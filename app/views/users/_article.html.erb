@@ -1,6 +1,6 @@
-<div class="col-xl-4 col-lg-6 col-md-12 text-center article-partial">
-  <div class="card p-2 m-4">
-    <%= image_tag article.image, class: 'category images p-5 p-lg-2 '%>
+<div class="col-xl-4 col-lg-6 col-md-12 text-center article-partial my-2">
+  <div class="card p-2 ">
+    <%= image_tag article.image, class: 'user images p-5 p-lg-2 '%>
     <div class="card-title text-wrap" ><h5><%= article.title %></h5></div>
     <small class="text-muted">Written By <%= article.author.name %>
       <%= article_buttons(article) %></small>
@@ -8,13 +8,17 @@
       <div class="card-text">
         <%= truncate(strip_tags(article.text.to_plain_text), :length =>200) %>
       </div>
-      <div class="d-flex justify-content-between align-items-center">
+    </div>
+      <div class="d-flex justify-content-between align-items-center p-2">
         <small>published <%= time_ago_in_words(article.created_at) %> ago </small>
         <%= link_to "Read More",article_path(article),class:'btn btn-primary' %>
       </div>
 
-      </div>
-      <div class="d-flex justify-content-end">
+
+      <div class="d-flex justify-content-end align-items-center mt-3 p-1">
+        <small class="mr-auto">
+          Categories:
+        <%= article.categories.map(&:name).join(',') %></small>
         <h1><%= vote_btn(article) %></h1></div>
     </div>
   </div>

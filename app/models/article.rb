@@ -9,5 +9,13 @@ class Article < ApplicationRecord
 
   has_one_attached :image
 
-  scope :most_voted, -> { order(:votes_count).limit(5) }
+  scope :most_voted, -> { order(:votes_count).first }
+
+  before_destroy :remove_category_assignments
+
+  private
+  def remove_category_assignments
+    article_categorizations.each(&:destroy)
+  end
+
 end

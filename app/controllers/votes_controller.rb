@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+  before_action :authorize, only: %i[create destroy]
   def create
     @vote = current_user.votes.new(vote_params)
 

@@ -1,0 +1,9 @@
+<div class="category-part card bg-dark text-white">
+  <%= image_tag category.articles.last.image, class:"card-image" %>
+  <div class="card-img-overlay">
+    <h5 class="card-title d-inline"><%= link_to category.name, category_path(category) %></h5>
+    <div class="position-absolute fixed-bottom">
+      <p class="card-text m-3 p-3"><%= link_to category.articles.last.title, article_path(category.articles.last) %></p>
+    </div>
+  </div>
+</div>

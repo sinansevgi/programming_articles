@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
-  resources :categories
+  resources :categories, only: %i[new create update edit show destroy]
   resources :articles,  only: %i[new create update edit show destroy] do
     resources :votes, only: %i[create destroy]
   end

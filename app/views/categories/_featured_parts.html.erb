@@ -1,0 +1,10 @@
+  <div class="featured card text-white">
+    <%= image_tag article.image, class: "card-image" %>
+    <div class="card-img-overlay">
+      <div class="text-back fixed-bottom position-absolute m-3 p-2">
+        <h5 class="card-title"><%= link_to article.title, article_path(article) %></h5>
+        <p class="card-text"><%= link_to (truncate(strip_tags(article.text.to_plain_text), :length => 100)), article_path(article) %></p>
+      </div>
+    </div>
+  </div>
+

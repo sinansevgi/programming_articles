@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row p-2 mt-3 bg-dark">
 
 <% @category.latest_articles.each do |article| %>
-  <%= render "article", article: article %>
+  <%= render "article_part", article: article %>
 <% end %>
 </div>
 
