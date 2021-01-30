@@ -8,8 +8,9 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= cloudinary_js_config %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag asset_path('favicon') %>
+    <%= favicon_link_tag cl_image_path('favicon-96x96_cbieg4.png') %>
   </head>
 
   <body class="bg-brown">

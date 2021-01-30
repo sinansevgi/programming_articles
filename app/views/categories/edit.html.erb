@@ -1,6 +1,7 @@
-<h1>Editing Category</h1>
-
-<%= render 'form', category: @category %>
-
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
+<div class="col-lg-4 offset-lg-4 text-center">
+  <div class="card m-lg-5 m-md-1 p-lg-5 p-md-1 border-primary">
+    <h1 class="h3 mb-3 font-weight-normal">Editing Category</h1>
+    <%= render 'form', category: @category %>
+    <%= link_to 'BACK', :back, class:'btn bt-primary mt-2' %>
+  </div>
+</div>

@@ -8,4 +8,6 @@ class Article < ApplicationRecord
   has_rich_text :text
 
   has_one_attached :image
+
+  scope :most_voted, -> { order(:votes_count).limit(5) }
 end
