@@ -1,5 +1,9 @@
-@import "custom";
-@import "fonts";
+@import 'custom';
+@import 'fonts';
 @import '~bootstrap/scss/bootstrap';
-@import "offcanvas";
-.trix-button-group--file-tools { display: none !important; }
+@import 'offcanvas';
+
+//noinspection ALL
+.trix-button-group--file-tools {
+  display: none !important;
+}

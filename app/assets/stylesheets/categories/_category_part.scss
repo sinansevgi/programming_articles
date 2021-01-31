@@ -1,8 +1,8 @@
-
-.category-part .card-image{
+.category-part .card-image {
   object-fit: cover;
   height: 350px;
 }
+
 .category-part .card-title {
   border-bottom: 3px solid #fff200;
   padding: 3px;
@@ -19,19 +19,21 @@
   font-weight: 900;
 }
 
-.category-part a{
+.category-part a {
   color: white;
 }
 
-.category-part a:hover{
+.category-part a:hover {
   color: white;
   text-decoration: none;
 }
+
 .category-part .card-text {
   font-weight: 800;
   font-size: 1.25rem;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
 }
-.category-part .title-container{
+
+.category-part .title-container {
   z-index: 1000;
 }
