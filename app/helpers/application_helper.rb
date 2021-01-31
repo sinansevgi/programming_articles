@@ -20,6 +20,7 @@ module ApplicationHelper
       link_to text, path, class: 'nav-link'
     end
   end
+
   def if_category_has_articles(category)
     nav_link(category.name, category_path(category)) if category.articles.includes([:articles]).any?
   end

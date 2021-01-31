@@ -4,12 +4,12 @@
 // inclusion directly in any other asset bundle and remove this file.
 //
 //= require trix/dist/trix
-
 // We need to override trix.css’s image gallery styles to accommodate the
 // <action-text-attachment> element we wrap around attachments. Otherwise,
 // images in galleries will be squished by the max-width: 33%; rule.
+//noinspection All
+/* stylelint-disable */
 .trix-content {
-  //noinspection ALL
   .attachment-gallery {
     > action-text-attachment,
     > .attachment {
@@ -18,7 +18,6 @@
       max-width: 33%;
     }
 
-    //noinspection ALL
     &.attachment-gallery--2,
     &.attachment-gallery--4 {
       > action-text-attachment,
@@ -29,7 +28,6 @@
     }
   }
 
-  //noinspection ALL
   action-text-attachment {
     .attachment {
       padding: 0 !important;
@@ -37,3 +35,4 @@
     }
   }
 }
+/* stylelint-enable */

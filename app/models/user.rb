@@ -6,7 +6,8 @@ class User < ApplicationRecord
   validates :name, length: { minimum: 4 }
 
   def all_articles(&block)
-    articles(&block).includes([image_attachment: :blob]).includes([:author]).includes([:rich_text_text]).includes([:article_categorizations]).includes([:categories])
+    part1 = articles(&block).includes([image_attachment: :blob]).includes([:author])
+    part1.includes([:rich_text_text]).includes([:article_categorizations]).includes([:categories])
   end
 
   def find_vote(article)
