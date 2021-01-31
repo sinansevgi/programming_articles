@@ -13,8 +13,8 @@
         <li class="nav-item">
           <%= nav_link("Home", root_path) %>
         </li>
-        <% Category.all_categories.with_articles.each do |category| %>
-          <%= nav_link(category.name, category_path(category)) %>
+        <% Category.all_categories.each do |category| %>
+          <%= if_category_has_articles(category) %>
         <% end %>
       </ul>
       <div class="d-flex flex-column flex-md-row mr-5">

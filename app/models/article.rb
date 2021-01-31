@@ -16,8 +16,8 @@ class Article < ApplicationRecord
   before_destroy :remove_category_assignments
 
   private
+
   def remove_category_assignments
     article_categorizations.each(&:destroy)
   end
-
 end

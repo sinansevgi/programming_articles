@@ -2,9 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
   before_action :authorize, only: %i[show]
 
-
-  def show
-  end
+  def show; end
 
   def new
     @user = User.new
@@ -15,7 +13,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to @user, notice: "Thank you for signing up!" }
+        format.html { redirect_to @user, notice: 'Thank you for signing up!' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -25,16 +23,17 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
     end
   end
 
   private
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    def user_params
-      params.require(:user).permit(:name)
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:name)
+  end
 end

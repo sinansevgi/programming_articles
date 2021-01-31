@@ -12,8 +12,8 @@ class ArticlesController < ApplicationController
 
   def create
     temp_params = article_params
-    category_params = temp_params["category_ids"]
-    temp_params.delete("category_ids")
+    category_params = temp_params['category_ids']
+    temp_params.delete('category_ids')
     @article = current_user.articles.build(temp_params)
     respond_to do |format|
       if @article.save

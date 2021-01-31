@@ -5,7 +5,6 @@ class Category < ApplicationRecord
   has_many :article_categorizations, foreign_key: :category_id
   has_many :articles, through: :article_categorizations
 
-  scope :with_articles, -> {joins(:articles).uniq}
   scope :all_categories, -> { order(priority: :desc) }
 
   before_destroy :uncategorize_all_articles
@@ -19,8 +18,8 @@ class Category < ApplicationRecord
   end
 
   private
+
   def uncategorize_all_articles
     article_categorizations.each(&:destroy)
   end
-
 end

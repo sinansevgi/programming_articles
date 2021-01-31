@@ -9,13 +9,16 @@ $font-family-sans-serif:      Chivo, Lato, system-ui, -apple-system, "Segoe UI",
   color:#4e443e;
   font-weight: bolder;
 }
+
+//noinspection ALL
 .nav-link{
-  font-family: Lato;
+  font-family: Lato, Sans-Serif;
   font-weight: bold;
   text-transform: uppercase;
   color: #847f7b;
 }
 
+//noinspection ALL
 .active .nav-link{
   text-transform: uppercase;
   color: #fd6000 !important;

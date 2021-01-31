@@ -7,6 +7,7 @@ body {
   padding-top: 56px;
 }
 
+//noinspection CssUnusedSymbol
 @media (max-width: 991.98px) {
   .offcanvas-collapse {
     position: fixed;
@@ -21,13 +22,14 @@ body {
     background-color: #4e443e;
     transition: transform .3s ease-in-out, visibility .3s ease-in-out;
   }
+  //noinspection CssUnusedSymbol
   .offcanvas-collapse.open {
     visibility: visible;
     transform: translateX(100%);
   }
 
   .offcanvas-collapse .nav-link{
-    font-family: Lato;
+    font-family: Lato, Sans-Serif;
     font-weight: bold;
     text-transform: uppercase;
     color: white !important;

@@ -35,6 +35,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
   gem 'bullet', '~> 6.1', '>= 6.1.3'
+  gem 'shoulda-matchers', '~> 4.0'
+  gem 'rexml'
 
 end
 
