@@ -11,7 +11,7 @@ class Article < ApplicationRecord
 
   has_one_attached :image
 
-  scope :most_voted, -> { order(votes_count: :desc).first }
+  scope :most_voted, -> { where('votes_count IS NOT NULL').order(votes_count: :desc).first }
 
   before_destroy :remove_category_assignments
 

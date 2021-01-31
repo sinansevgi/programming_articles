@@ -9,10 +9,6 @@ class Category < ApplicationRecord
 
   before_destroy :uncategorize_all_articles
 
-  def most_voted_articles
-    articles.order(:votes_count).limit(5)
-  end
-
   def latest_articles
     articles.includes([image_attachment: :blob]).includes([:author]).includes([:rich_text_text]).order(created_at: :desc)
   end
