@@ -4,7 +4,7 @@
   <p class="mb-0">You can click to the pen icon next to author name to edit your articles.</p></div>
 <div class="row">
 
-  <% @user.articles.each do |article| %>
+  <% @user.all_articles.each do |article| %>
     <%= render "article", article: article %>
   <% end %>
 </div>

@@ -5,7 +5,8 @@ class Category < ApplicationRecord
   has_many :article_categorizations, foreign_key: :category_id
   has_many :articles, through: :article_categorizations
 
-  scope :all_categories, -> { order(:name) }
+  scope :with_articles, -> {joins(:articles).uniq}
+  scope :all_categories, -> { order(priority: :desc) }
 
   before_destroy :uncategorize_all_articles
 
@@ -14,7 +15,7 @@ class Category < ApplicationRecord
   end
 
   def latest_articles
-    articles.order(created_at: :desc)
+    articles.includes([image_attachment: :blob]).includes([:author]).includes([:rich_text_text]).order(created_at: :desc)
   end
 
   private

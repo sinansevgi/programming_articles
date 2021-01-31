@@ -1,7 +1,7 @@
 module ArticlesHelper
   def vote_btn(article)
     if current_user
-      vote = Vote.find_by(article: article, user: current_user)
+      vote = current_user.find_vote(article)
       if vote
         text = 'Remove your vote'
         link_to('', article_vote_path(id: vote.id, article_id: article.id),

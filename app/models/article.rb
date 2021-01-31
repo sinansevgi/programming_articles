@@ -1,5 +1,7 @@
 class Article < ApplicationRecord
   validates :title, presence: true
+  validates :text, presence: true
+  validates :image, presence: true
 
   belongs_to :author, class_name: 'User'
   has_many :article_categorizations, foreign_key: :article_id
@@ -9,7 +11,7 @@ class Article < ApplicationRecord
 
   has_one_attached :image
 
-  scope :most_voted, -> { order(:votes_count).first }
+  scope :most_voted, -> { order(votes_count: :desc).first }
 
   before_destroy :remove_category_assignments
 
