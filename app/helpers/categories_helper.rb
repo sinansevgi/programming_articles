@@ -5,7 +5,7 @@ module CategoriesHelper
   end
 
   def get_image(category)
-    image_tag(category.articles.last.image, class: 'card-image') if category.articles.last.present?
+    image_tag(category.articles.last.image, class: 'card-image img-fluid') if category.articles.last.present?
   end
 
   def get_title(category)
