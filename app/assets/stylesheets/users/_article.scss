@@ -1,3 +1,7 @@
 .article-partial .card {
   height: 100%;
 }
+.article-partial img{
+  height: 100%;
+  object-fit: cover;
+}

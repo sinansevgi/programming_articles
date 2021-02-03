@@ -18,12 +18,10 @@
     </div>
   </div>
 
-  <% if @article.image.present? %>
   <div class="img-thumbnail my-3">
     <p>Current Article Image:</p>
     <%= image_show(@article) %>
   </div>
- <% end %>
 
   <div class="form-group">
     <%= form.label :title %>

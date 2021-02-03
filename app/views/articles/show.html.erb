@@ -2,7 +2,7 @@
   <div class="col-md-10 offset-md-1 text-center">
     <div class="card p-2 m-5">
       <div class="justify-content-center">
-      <%= image_tag @article.image, class: 'article image p-5 w-50' %>
+      <%= image_show @article %>
       </div>
       <div class="card-title">  <h1><%= @article.title %></h1></div>
       <small class="text-muted">Written By <%= @article.author.name %>
