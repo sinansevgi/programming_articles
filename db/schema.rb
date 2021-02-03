@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_141224) do
     t.bigint "author_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "votes_count"
+    t.integer "votes_count", default: 0, null: false
     t.index ["author_id"], name: "index_articles_on_author_id"
   end
 
