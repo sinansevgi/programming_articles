@@ -2,17 +2,7 @@
   <div class="card m-lg-5 m-md-1 p-lg-5 p-md-1 border-primary">
     <%= image_tag 'apple-icon', class: 'mb-4' %>
     <%= form_with(model: user) do |form| %>
-      <% if user.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-          <ul>
-            <% user.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+      <%= error_form(user) %>
       <h1 class="h3 mb-3 font-weight-normal">Please Sign Up</h1>
 
       <div class="form-group">

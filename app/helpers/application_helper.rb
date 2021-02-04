@@ -24,4 +24,8 @@ module ApplicationHelper
   def if_category_has_articles(category)
     nav_link(category.name, category_path(category)) if category.articles.includes([:articles]).any?
   end
+
+  def error_form(element)
+    render 'layouts/error_form', element: element if element.errors.any?
+  end
 end
