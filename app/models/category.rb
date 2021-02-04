@@ -8,6 +8,7 @@ class Category < ApplicationRecord
   scope :all_categories, -> { order(priority: :desc) }
 
   before_destroy :uncategorize_all_articles
+  after_destroy :set_no_category
 
   def latest_articles
     part1 = articles.includes([image_attachment: :blob]).includes([:author])
@@ -18,5 +19,16 @@ class Category < ApplicationRecord
 
   def uncategorize_all_articles
     article_categorizations.each(&:destroy)
+  end
+
+  def set_no_category
+    Article.all.each do |article|
+      next unless article.categories.empty?
+
+      category = Category.find_by(name: 'No-category')
+      ArticleCategorization.create!(article_id: article.id, category_id: category.id) unless category.nil?
+      category = Category.create!(name: 'No-category', priority: 1) if category.nil?
+      ArticleCategorization.create!(article_id: article.id, category_id: category.id) if category.nil?
+    end
   end
 end
