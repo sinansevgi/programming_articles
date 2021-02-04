@@ -14,4 +14,3 @@ class User < ApplicationRecord
     votes.find_by(article_id: article.id)
   end
 end
-

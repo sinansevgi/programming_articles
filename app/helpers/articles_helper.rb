@@ -27,6 +27,6 @@ module ArticlesHelper
   end
 
   def image_show(article)
-    image_tag(article.image, class:'img-fluid card-image') if article.image.present?
+    image_tag(article.image, class: 'img-fluid card-image') if article.image.present?
   end
 end
