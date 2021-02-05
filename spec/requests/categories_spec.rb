@@ -19,6 +19,10 @@ RSpec.describe '/categories', type: :request do
     User.create!(name: 'test')
   end
 
+  let(:image) do
+    Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/files/github.png'), 'image/png', true)
+  end
+
   let(:article) do
     Article.create!(title: 'test', text: 'test', author: user, image: image)
   end

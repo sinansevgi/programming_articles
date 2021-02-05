@@ -10,7 +10,7 @@ RSpec.describe '/articles', type: :request do
   end
 
   let(:valid_attributes) do
-    { title: 'test', text: 'test', author: user, image: image }
+    { title: 'test', text: 'test', author_id: user.id, image: image }
   end
 
   let(:invalid_attributes) do
@@ -30,6 +30,15 @@ RSpec.describe '/articles', type: :request do
       expect(response).to be_successful
     end
   end
+
+  describe 'GET /create' do
+    it 'renders a successful response' do
+      expect do
+        Article.create! valid_attributes
+        post articles_url, params: valid_attributes
+      end.to change(Article, :count).by(1)
+      end
+    end
 
   describe 'GET /show' do
     it 'renders a successful response' do

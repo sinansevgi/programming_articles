@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  let(:category) { Category.new(name: 'test') }
+  let(:category) { Category.create!(name: 'test') }
 
   describe 'validation tests' do
     it 'ensures category presence' do
@@ -11,6 +11,9 @@ RSpec.describe Category, type: :model do
     it 'creates a new record' do
       expect(category.name).to eq('test')
     end
+    it { should validate_presence_of(:name) }
+    it { should_not allow_value('').for(:name) }
+    it { should validate_uniqueness_of(:name) }
   end
 
   describe 'associations tests' do
