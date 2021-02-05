@@ -7,7 +7,7 @@ RSpec.describe ArticleCategorization, type: :model do
     Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/files/github.png'), 'image/png', true)
   end
   let(:article) { Article.create!(title: 'test', image: image, author_id: user.id, text: 'Test') }
-  let(:categorization){ ArticleCategorization.create!(article_id: article.id, category_id: category.id)}
+  let(:categorization) { ArticleCategorization.create!(article_id: article.id, category_id: category.id) }
 
   describe 'validations tests' do
     it 'should validate with valid data' do
@@ -24,6 +24,5 @@ RSpec.describe ArticleCategorization, type: :model do
     it { should belong_to(:article) }
     it { should belong_to(:category) }
     it { should accept_nested_attributes_for(:category) }
-
   end
 end

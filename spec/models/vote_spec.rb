@@ -7,7 +7,7 @@ RSpec.describe Vote, type: :model do
     Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/files/github.png'), 'image/png', true)
   end
   let(:article) { user.articles.create!(title: 'test', image: image, text: 'text') }
-  let(:vote) { Vote.create!(user_id: user2.id, article_id: article.id)}
+  let(:vote) { Vote.create!(user_id: user2.id, article_id: article.id) }
 
   describe 'validation tests' do
     it 'ensures user presence' do
@@ -23,7 +23,6 @@ RSpec.describe Vote, type: :model do
       Vote.create!(user_id: user2.id, article_id: article.id)
       expect { article.votes.create!(user_id: user2.id) }.to raise_error(ActiveRecord::RecordInvalid)
     end
-
   end
 
   describe 'associations tests' do

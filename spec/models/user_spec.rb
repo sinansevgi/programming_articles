@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
     it 'creates a new record' do
       expect(user.name).to eq('test')
     end
-    it { should validate_uniqueness_of(:name)}
+    it { should validate_uniqueness_of(:name) }
   end
 
   describe 'association tests' do

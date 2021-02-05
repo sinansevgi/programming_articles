@@ -25,9 +25,8 @@ RSpec.describe Article, type: :model do
       expect(article.title).to eq('test')
     end
     it 'should not create article without image' do
-      expect{ Article.create!(author_id: user.id, title: 'test', text: test, image: '')}.to raise_error(ArgumentError)
+      expect { Article.create!(author_id: user.id, title: 'test', text: test, image: '') }.to raise_error(ArgumentError)
     end
-
   end
 
   describe 'associations tests' do

@@ -37,8 +37,8 @@ RSpec.describe '/articles', type: :request do
         Article.create! valid_attributes
         post articles_url, params: valid_attributes
       end.to change(Article, :count).by(1)
-      end
     end
+  end
 
   describe 'GET /show' do
     it 'renders a successful response' do
