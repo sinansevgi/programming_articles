@@ -1,0 +1,47 @@
+<%= form_with(model: article) do |form| %>
+  <%= error_form(article) %>
+
+  <div class="input-group my-3">
+    <div class="custom-file">
+      <%= form.file_field :image, class: 'custom-file-input' %>
+      <%= form.label :image, class: 'custom-file-label',  direct_upload: true %>
+    </div>
+  </div>
+
+  <div class="img-thumbnail my-3">
+    <p>Current Article Image:</p>
+    <%= image_show(@article) %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, {class:'form-control', maxlength: '50', minlength: '10'}%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :text %>
+    <%= form.rich_text_area :text %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :categories, class: 'form-check-label' %>
+    <div class="d-block">
+      <table class="table-sm form-check">
+    <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |check| %>
+        <%= check.label class:"form-check-label" do%>
+              <tr>
+                <td><%=check.check_box %></td>
+                <td><%=check.text %></td>
+                <td> <%= link_to '', edit_category_path(:id => check.value), class: 'fas fa-pencil-alt' %></td>
+              </tr>
+        <%end%>
+      <% end %>
+      </table>
+
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-primary" %>
+  </div>
+<% end %>

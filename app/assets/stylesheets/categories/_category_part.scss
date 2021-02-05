@@ -1,0 +1,36 @@
+.category-part .card-image {
+  object-fit: cover;
+  height: 350px;
+}
+
+.category-part .card-title {
+  border-bottom: 3px solid #fff200;
+  padding: 3px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+  font-weight: 900;
+}
+
+.category-part .card-img-overlay {
+  box-shadow: 0 1px 91px 22px rgba(0, 0, 0, 0.5) inset;
+  -webkit-box-shadow: 0 1px 91px 22px rgba(0, 0, 0, 0.5) inset;
+  -moz-box-shadow: 0 1px 91px 22px rgba(0, 0, 0, 0.5) inset;
+}
+
+.category-part a {
+  color: white;
+}
+
+.category-part a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.category-part .card-text {
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+}
+
+.category-part .title-container {
+  z-index: 1000;
+}

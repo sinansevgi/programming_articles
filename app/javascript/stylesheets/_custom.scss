@@ -1,0 +1,24 @@
+$theme-colors: (
+  "primary": #fd6000,
+  "brown": #4e443e
+);
+$font-family-sans-serif: chivo, lato, system-ui, -apple-system, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+
+.navbar-brand {
+  color: #4e443e;
+  font-weight: bolder;
+}
+//noinspection ALL
+
+.nav-link {
+  font-family: lato, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #847f7b;
+}
+//noinspection ALL
+
+.active .nav-link {
+  text-transform: uppercase;
+  color: #fd6000 !important;
+}

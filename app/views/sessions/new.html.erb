@@ -1,0 +1,15 @@
+<div class="col-lg-4 offset-lg-4 text-center">
+  <div class="card m-lg-5 m-md-1 p-lg-5 p-md-1 border-primary">
+    <%= image_tag 'apple-icon', class: 'mb-4' %>
+    <%= form_tag sessions_path do %>
+      <h1 class="h3 mb-3 font-weight-normal">Please Log in</h1>
+      <div class="form-group">
+        <%= label_tag :name %>
+        <%= text_field_tag :name, params[:name], class: 'form-control' %>
+      </div>
+      <div class="my-3">
+        <%= submit_tag "Log In", class: 'btn btn-lg btn-primary btn-block' %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<%= render_featured %>
+<div class="row">
+  <% Category.all_categories.limit(4).each do |category| %>
+  <%= render_partial(category) %>
+  <% end %>
+
+</div>

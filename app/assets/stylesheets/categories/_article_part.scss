@@ -1,0 +1,29 @@
+.category-article .card {
+  height: 100%;
+}
+
+.category-article .card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.category-article .card .row {
+  height: 100%;
+}
+
+.category-article:nth-child(4n-1) .card .row {
+  flex-direction: row-reverse;
+}
+
+.category-article:nth-child(4n) .card .row {
+  flex-direction: row-reverse;
+}
+
+.category-article:nth-child(4n-1) .card .row .for-btn {
+  flex-direction: row-reverse;
+}
+
+.category-article:nth-child(4n) .card .row .for-btn {
+  flex-direction: row-reverse;
+}

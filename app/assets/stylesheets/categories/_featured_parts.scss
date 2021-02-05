@@ -1,0 +1,16 @@
+.featured img {
+  height: 600px;
+  object-fit: cover;
+}
+
+.featured .text-back {
+  z-index: 1000;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 2%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.featured .card-text a {
+  color: white;
+}

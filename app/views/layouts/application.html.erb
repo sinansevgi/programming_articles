@@ -2,15 +2,31 @@
 <html>
   <head>
     <title>ProgrammingArticles</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_url('favicon') %>
   </head>
 
-  <body>
+  <body class="bg-brown">
+  <%= render 'layouts/navbar' %>
+  <% if notice.present? %>
+    <div class="alert alert-warning alert-dismissible fade show m-5" role="alert">
+    <strong><%= notice %></strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+    <% end %>
+  <div class="container-fluid main">
     <%= yield %>
+  </div>
+    <div class="row">
+    <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
