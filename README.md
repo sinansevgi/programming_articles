@@ -1,5 +1,3 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 # Programming Articles
 
 > This is a rails blogging app designed for publishing programming articles. 
