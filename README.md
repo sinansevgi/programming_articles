@@ -85,6 +85,7 @@ Give an ⭐️ if you like this project!
 * CSS Framework [Bootsrap](https://getbootstrap.com/)
 * Testing [rspec rails](https://github.com/rspec/rspec-rails)
 * Icons [font-awesome](https://github.com/FortAwesome/font-awesome)
+* Example articles taken from the [FreeCodeCamp](https://www.freecodecamp.org/)
 * Eager loading tests [bullet](https://github.com/flyerhzm/bullet)
 
 ## 📝 License
