@@ -58,7 +58,7 @@ You need Ruby & Postgresql in order to run this application on your Machine
 - From the terminal run `rails db:create`
 - From the terminal run `rails db:migrate`
 ### Usage
-- You can start the server with rails s
+- You can start the server with `rails s`
 - Visit `http://localhost:3000` from your browser
 
 
